@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon1.png">
+    <title>Quick Estates</title>
+
+    <style>
+        /* Existing styles */
+        .banner {
+            background-image: url(images/quick.JPG);
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            margin: 0px;
+        }
+
+        .banner .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .home-text h1 {
+            font-size: 80px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .home-text p {
+            font-size: 22px;
+            color: #ffffff;
+        }
+
+        .banner .navbar-nav > li > a {
+            font-size: 18px;
+            color: white;
+        }
+
+        .navbar-default {
+            background-color: transparent;
+            border: none;
+        }
+
+        .nav-btn {
+            font-size: 16px;
+            padding: 12px 24px;
+            background-color: transparent;
+            border: 2px solid rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 30%;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            border:2px solid black;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card .card-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .card .card-description {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .get-started-btn {
+            padding: 15px 40px;
+            background-color: #000;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .get-started-btn:hover {
+            background-color: #ff6600;
+            
+            
+        }
+        .btn{
+            background-color: transparent;
+            padding: 20px;
+            color: rgb(0, 0, 0);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .btn:hover{
+            color: #ff6600;
+        }
+        .about-section{
+            padding: 20px;
+        }
+        .contact-section{
+            padding: 20px;
+            background-color: #000;
+        }
+        .header{
+            color: #000;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .info{
+            font-size: 18px;
+        }
+        /* Scroll behavior styles */
+        .navbar {
+            margin:0px;
+            position:static;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 5px;
+            background-color: rgb(255, 255, 255);
+            z-index: 1000;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .navbar-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .navbar-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .container{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+        }
+        .container2{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .img-responsive{
+            width: 200px;
+        }
+        body{
+            margin: 0%;
+        }
+        
+
+    .faq-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Added box shadow */
+    }
+
+    .faq-item:hover {
+        background-color: #f1f1f1;
+    }
+
+    .faq-question {
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .faq-answer {
+        display: none;
+        margin-top: 8px;
+        color: #555;
+        font-size: 16px;
+    }
+        /* From Uiverse.io by Smit-Prajapati */ 
+.parent {
+  width: 32%;
+  padding: 20px;
+  perspective: 1000px;
+  
+}
+/* From Uiverse.io by DavidTM96 */ 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 10px;
+  padding-inline: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 20px;
+}
+
+.form-heading {
+  text-align: center;
+  margin: 2em;
+  color: #64ffda;
+  font-size: 1.2em;
+  background-color: transparent;
+  align-self: center;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 10px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #ccd6f6;
+  padding-inline: 1em;
+}
+
+.sendMessage-btn {
+  cursor: pointer;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #64ffda;
+  font-weight: bold;
+  outline: 1px solid #64ffda;
+  transition: all ease-in-out 0.3s;
+}
+
+.sendMessage-btn:hover {
+  transition: all ease-in-out 0.3s;
+  background-color: #64ffda;
+  color: #000;
+  cursor: pointer;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.form-card1 {
+  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  border-radius: 22px;
+  transition: all 0.3s;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+}
+
+.form-card2 {
+  border-radius: 0;
+  transition: all 0.2s;
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 200px;
+}
+
+.button1:disabled {
+ pointer-events: none;
+}
+
+.button1:hover {
+ color: #fff;
+ background-color: #1A1A1A;
+ box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+.button1:active {
+ box-shadow: none;
+ transform: translateY(0);
+}
+
+
+
+.card {
+  padding-top: 50px;
+  /* border-radius: 10px; */
+  border: 3px solid rgb(255, 255, 255);
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
+      repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #f0f0f0;
+  width: 90%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.card:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  background: rgba(0, 0, 0, 0.732);
+  /* border-radius: 10px 100px 10px 10px; */
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.content-box .card-title {
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: rgb(7, 185, 255);
+  /* border-radius: 5px; */
+  background: white;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: white;
+  border: 1px solid rgb(7, 185, 255);
+  /* border-radius: 10px; */
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+  display: block;
+  text-align: center;
+}
+
+.date-box .month {
+  color: rgb(4, 193, 250);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(4, 193, 250);
+}
+.scroll-indicator {
+  position: fixed;
+  right: 20px; /* Adjust the position */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the line and text */
+}
+
+.line {
+  width: 2px;
+  height: 100px; /* Adjust the line height */
+  background-color: rgb(255, 255, 255);
+}
+
+.text {
+  writing-mode: vertical-rl; /* Makes the text vertical */
+  transform: rotate(180deg);  /* Rotates to face the right direction */
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+ 
+    </style>
+</head>
+<body>
+    <!-- Banner -->
+    <nav class="navbar navbar-visible" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.php" class="navbar-brand"><img src="images/logo1.png" alt="Logo" class="img-responsive"></a>
+            </div>
+            <ul class="container2">
+                <a href="index.php"><button class="btn">Home</button></a>
+                <a href="portfolio.php"><button class="btn">Apartments</button></a>
+                <a href="blog.php"><button class="btn">FAQs</button></a>
+                <a href="contact.php"><button class="btn">Contacts</button></a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="container">
+            <div class="home-text">
+                <h1>Quick Estates.</h1>
+                <p>Your Trusted Partner in Finding the Perfect Rental Home.</p>
+                <div>
+                    <a href="apartments.html"><button class="nav-btn">Explore Listings.</button></a>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="line"></div>
+                    <span class="text">SCROLL.</span>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    
+    <div class="about-section">
+        <p class="header">About Quick Estates.</p>
+        <p class="info">At Quick Estates, we believe that finding your perfect rental home should be simple, stress-free, and tailored to your needs. We are a trusted real estate platform dedicated to connecting individuals and families with modern, comfortable, and affordable living spaces.
+
+            With a wide range of apartments and houses to choose from, we cater to diverse lifestyles and budgets. Whether you're looking for a cozy studio, a spacious family home, or a luxurious apartment, Quick Estates is here to guide you every step of the way.
+            
+            Our mission is to provide a seamless property search experience, supported by a team of professionals committed to helping you find not just a house, but a place you can call home. We prioritize transparency, convenience, and customer satisfaction in everything we do.
+            </p>
+    </div>
+    <!-- Card Section -->
+    <div class="card-container">
+        <div class="parent">
+            <div class="card">
+                <div class="content-box">
+                    <span class="card-title">Modern Apartments</span>
+                    <p class="card-content">
+                        Browse through a selection of stylish and modern apartments for rent, designed to suit all preferences and budgets. 
+                    </p>
+                    <span class="see-more">Explore</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="card">
+                <div class="content-box">
+                    <span class="card-title">Reliable Support</span>
+                    <p class="card-content">
+                        Our dedicated team is available around the clock to assist you with any inquiries or issues you may have during your rental experience. 
+                    </p>
+                    <span class="see-more">Explore</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="card">
+                <div class="content-box">
+                    <span class="card-title">Affordable Pricing</span>
+                    <p class="card-content">
+                        Find great apartments at affordable prices. We ensure you get value for money while enjoying top-notch living conditions. 
+                    </p>
+                    <span class="see-more">Explore</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+            <p class="info">Discover your next home with Quick Estates – where comfort meets convenience.</p>
+    </div>
+
+    <div class="about-section" id="faq">
+        <p class="header">Frequently Asked Questions</p>
+    
+        <div class="faq-item">
+            <p class="faq-question">What types of properties does Quick Estates offer?</p>
+            <p class="faq-answer">Quick Estates offers a wide range of rental properties, including modern apartments, family homes, and luxurious studios to suit diverse lifestyles and budgets.</p>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">How do I schedule a property viewing?</p>
+            <p class="faq-answer">You can schedule a property viewing by contacting us through the <a href="contact.php">Contacts</a> page or by using the 'Explore Listings' button on our homepage.</p>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">Is there a service fee for using Quick Estates?</p>
+            <p class="faq-answer">No, Quick Estates does not charge any service fees for browsing listings. However, some property owners may have specific terms that will be clearly communicated during the rental process.</p>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">Can I list my property with Quick Estates?</p>
+            <p class="faq-answer">Yes, property owners can list their properties with Quick Estates. Please reach out to us through the <a href="contact.php">Contacts</a> page for more details.</p>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">What if I have issues after moving in?</p>
+            <p class="faq-answer">Our support team is available 24/7 to assist you with any issues you may encounter during your rental period. Contact us anytime for prompt assistance.</p>
+        </div>
+    </div>
+    <!-- From Uiverse.io by somshri16 --> 
+     
+     <div class="contact-section">
+        <p class="header">Contact Us</p>
+        <p class="info">Get in touch.</p>
+        <br>
+        <div class="contact-form">
+            <!-- From Uiverse.io by DavidTM96 --> 
+<div class="form-card1">
+    <div class="form-card2">
+        <form class="form">
+            <p class="form-heading">Get In Touch</p>
+    
+            <div class="form-field">
+            <input required="" placeholder="Name" class="input-field" type="text" />
+            </div>
+    
+            <div class="form-field">
+            <input
+                required=""
+                placeholder="Email"
+                class="input-field"
+                type="email"
+            />
+            </div>
+    
+            <div class="form-field">
+            <input
+                required=""
+                placeholder="Subject"
+                class="input-field"
+                type="text"
+            />
+            </div>
+    
+            <div class="form-field">
+            <textarea
+                required=""
+                placeholder="Message"
+                cols="30"
+                rows="3"
+                class="input-field"
+            ></textarea>
+            </div>
+    
+            <button class="sendMessage-btn">Send Message</button>
+        </form>
+        </div>
+    </div>
+    
+    
+            <div class="w3l-map">
+                <iframe width="100%" height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15926.4164107352!2d36.9395182!3d-1.2546377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f159948e69aeb%3A0xc63a8b3f37609fc6!2sChrist+miracle!5e0!3m2!1sen!2ske!4v1673511082847!5m2!1sen!2ske" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+
+        </div>
+        
+
+     </div>
+
+
+    <!-- From Uiverse.io by e-coders --> 
+
+
+
+    <script>
+        // Toggle FAQ answers on click
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
