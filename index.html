@@ -7,6 +7,9 @@
     <title>Quick Estates</title>
 
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         /* Existing styles */
         .banner {
             background-image: url(images/quick.JPG);
@@ -471,15 +474,15 @@
                 <a href="index.php" class="navbar-brand"><img src="images/logo1.png" alt="Logo" class="img-responsive"></a>
             </div>
             <ul class="container2">
-                <a href="index.php"><button class="btn">Home</button></a>
-                <a href="portfolio.php"><button class="btn">Apartments</button></a>
-                <a href="blog.php"><button class="btn">FAQs</button></a>
-                <a href="contact.php"><button class="btn">Contacts</button></a>
+                <a href="#home"><button class="btn">Home</button></a>
+                <a href="apartments.html"><button class="btn">Apartments</button></a>
+                <a href="#faq"><button class="btn">FAQs</button></a>
+                <a href="#contacts"><button class="btn">Contacts</button></a>
             </ul>
         </div>
     </nav>
 
-    <div class="banner">
+    <div class="banner" id="home">
         <div class="container">
             <div class="home-text">
                 <h1>Quick Estates.</h1>
@@ -498,7 +501,7 @@
 
     <!-- Navigation -->
     
-    <div class="about-section">
+    <div class="about-section" id="about">
         <p class="header">About Quick Estates.</p>
         <p class="info">At Quick Estates, we believe that finding your perfect rental home should be simple, stress-free, and tailored to your needs. We are a trusted real estate platform dedicated to connecting individuals and families with modern, comfortable, and affordable living spaces.
 
@@ -580,7 +583,7 @@
     </div>
     <!-- From Uiverse.io by somshri16 --> 
      
-     <div class="contact-section">
+     <div class="contact-section" id="contacts">
         <p class="header">Contact Us</p>
         <p class="info">Get in touch.</p>
         <br>
