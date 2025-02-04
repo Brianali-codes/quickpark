@@ -64,12 +64,11 @@
   #popup{
     position: fixed;
     display: none;
-    top: 0;
+    top: 20%;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 20%;
     width: 100%;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -96,7 +95,7 @@
       <p class="house-price">2 bedrooms @ Kes </p>
       <p class="house-price">Bedsitters @ Kes</p>
       <p class="house-price">3 Bedrooms @ Kes</p>
-      <a href="#" class="view-button">Book a House</a>
+      <button onclick="togglePopup()" class="view-button">Book a House</button>
     </div>
   </section>
   <br><br>
@@ -110,17 +109,20 @@
       <p class="house-price">2 bedrooms @ Kes </p>
       <p class="house-price">Bedsitters @ Kes</p>
       <p class="house-price">3 Bedrooms @ Kes</p>
-      <a href="#" class="view-button">Book a House</a>
+      <button onclick="togglePopup()" class="view-button">Book a House</button>
     </div>
   </section>
 
   <div id="popup">
     <form action="https://formsubmit.co/your@email.com" method="POST" class="form1">
-        <input type="text" name="name" required>
-        <input type="email" name="email" required>
-        <button type="submit">Send</button>
+        <input type="text" name="name" required placeholder="Your Name:">
+        <input type="email" name="email" required placeholder="Your Email adress.">
+        <input type="text" name="message" placeholder="House. eg:quickpark plaza">
+        <button type="submit"  onclick="togglePopup()">Book apartment</button>
    </form>
   </div>
-
+<script src="index.js">
+  
+</script>
 </body>
 </html>
