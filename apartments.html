@@ -1,14 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apartments</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Houses Listing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 20px;
+    }
+    .form1{
+        display: flex;
+        flex-direction: column;
+    }
+    .house-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: white;
+      border-bottom: 2px solid #ddd;
+      border: 2px solid black;
+      padding: 2px;
+      border-radius: 20px;
+    }
+    .house-image {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .house-details {
+      padding: 20px;
+      background-color: #fff;
+      border-top: 2px solid #eee;
+    }
+    .house-title {
+      font-size: 2em;
+      margin: 0 0 10px;
+    }
+    .house-location, .house-price {
+      font-size: 1.2em;
+      color: #555;
+      margin: 5px 0;
+    }
+    .view-button {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+    .view-button:hover {
+      background-color: #0056b3;
+    }
+     /* Dropdown container */
+  #popup{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 20px;
+  }
+  .form1{
+    gap: 20px;
+  }
+  .form1 input{
+    width: 100%;
+  }
+  </style>
 </head>
 <body>
-    <div>
-        <p>Apartments.</p>
+
+  <section class="house-section">
+    <img src="images/quick.webp" alt="Modern Apartment" class="house-image">
+    <div class="house-details">
+      <h1 class="house-title">Quickpark Village Plaza</h1>
+      <p class="house-location">Njiru, New njiru town, off kangundo Road</p>
+      <p class="house-price">Availablle houses:</p>
+      <p class="house-price">1 bedroom @ Kes</p>
+      <p class="house-price">2 bedrooms @ Kes </p>
+      <p class="house-price">Bedsitters @ Kes</p>
+      <p class="house-price">3 Bedrooms @ Kes</p>
+      <a href="#" class="view-button">Book a House</a>
     </div>
-    
+  </section>
+  <br><br>
+  <section class="house-section">
+    <img src="images/amani.JPG" alt="Modern Apartment" class="house-image">
+    <div class="house-details">
+      <h1 class="house-title">Quickpark Village Plaza</h1>
+      <p class="house-location">Njiru, New njiru town, off kangundo Road</p>
+      <p class="house-price">Availablle houses:</p>
+      <p class="house-price">1 bedroom @ Kes</p>
+      <p class="house-price">2 bedrooms @ Kes </p>
+      <p class="house-price">Bedsitters @ Kes</p>
+      <p class="house-price">3 Bedrooms @ Kes</p>
+      <a href="#" class="view-button">Book a House</a>
+    </div>
+  </section>
+
+  <div id="popup">
+    <form action="https://formsubmit.co/your@email.com" method="POST" class="form1">
+        <input type="text" name="name" required>
+        <input type="email" name="email" required>
+        <button type="submit">Send</button>
+   </form>
+  </div>
+
 </body>
 </html>
